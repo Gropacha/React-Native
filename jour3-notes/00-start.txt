@@ -1,0 +1,68 @@
+support : 
+https://formation.webdevpro.net/react-native 
+login : react-native 
+password : facebook 
+
+-----------------
+
+notes de cours sur github :
+https://github.com/webdevproformation/react-native-d-avril-2023
+
+
+=> Question sur ce l'on a vu ?? 
+
+pour quoi les boucles avec [].map() à la place for()
+
+
+Toto.jsx 
+
+import { View } from "react-native"
+
+export function Toto(){
+    const texte = "jsx"
+    return <View>{ texte }</View>
+    // interpolation
+}
+
+version de javascript => traduit => javascript (React JS => web)
+                      => traduit babel => javascript (React JS => web) => processeur de smartphone 
+https://babeljs.io/
+
+----------------
+
+en html classique et je classique 
+
+const texte = "jsx"
+
+document.querySelector(".toto").innerHTML = `<div>${jsx}</div>`
+                                        -- 
+
+<View>
+  <Text>tutu </Text>
+  <Text>comment allez vous ??</Text>
+</View>
+
+=> traduction / virtual DOM 
+
+import { jsx as _jsx } from "react/jsx-runtime";
+import { jsxs as _jsxs } from "react/jsx-runtime";
+_jsxs(View, {
+  children: [_jsx(Text, {
+    children: "tutu "
+  }), _jsx(Text, {
+    children: "comment allez vous ??"
+  })]
+});
+
+=> exécuter le code (dans le navigateur ) en + stocker le DOM exécuté dans la RAM 
+si il y a une mis à jour du DOM => virtual DOM (très rapide) puis mise à jour QUE l'élément modifié 
+
+
+<View>
+  [<Text>element1</Text> , <Text>elemnt2</Text>]
+</View>
+
+<View>
+  <Text>element1</Text> 
+  <Text>elemnt2</Text>
+</View>

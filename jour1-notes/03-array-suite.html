@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array suite</title>
+</head>
+<body>
+    <script>
+        const a = [1,2,2,3,3];
+        // rechercher un élément dans un tableau
+        // parcourir chaque élément d'un tableau
+        // retourner la valeur si elle existe
+        // find est une méthode High Order function // fonction de premier ordre
+        // fonction anonyme comme paramètre d'une fonction => callback
+        // ce callback va être exécuté autant de fois qu'il y a d'élément dans le tableau a => 3 fois
+        const recherche = a.find(function(item){
+            return item<3;
+        });
+        console.log(recherche);
+
+        // version fléchée
+        console.log(a.find((item)=>{return item===5}));
+
+        // version fléchée raccourcie
+        console.log(a.find(item => item===2));
+
+        // A CONNAITRE ABSOLUMENT car elle est centrale dans React en remplacement des boucles for
+        // a.map(function(){});
+        // permet de retourner une nouvelle version du tableau a
+        console.log(a);
+        const aFois5 = a.map(function(item){
+            return item*5;
+        });
+        console.log(aFois5);
+
+        const aContHTML = a.map(function(item){
+            return `<p>${item}</p>`
+        });
+        const aContHTMLraccourci = a.map(item => `<p>${item}</p>`)
+        console.log(aContHTML);
+
+        // méthode REDUCE permet de réduire un tableau en une valeur
+        // Redux // useReducer() => fonctionnalités de React Native
+        // a.reduce(function(){});
+        const b = [12,15,20];
+        const bReduce = b.reduce((total, current) => total.toString()+" "+ current.toString(), "début du reduce");
+        console.log(bReduce);
+
+        // https://formation.webdevpro.net/js-dom (js, web)
+        // https://formation.webdevpro.net/js-dom/04-event.html
+
+
+
+        // méthode FILTER
+        // a.filter(function(){});  Permet  d'extraire toutes les lignes qui répondent à un critère
+        const etudiantsNote = [
+            {nom:"Alain", note:15},
+            {nom:"Benoit", note:8},
+            {nom:"Céline", note :18},
+            {nom:"Denis", note:10}
+        ];
+        const etudiantsAdmis = etudiantsNote.filter( function(item){
+            return item.note>=10
+        });
+        console.log(etudiantsAdmis);
+        console.log(etudiantsNote.filter(item => item.note >= 10));
+
+        // destructuration
+        // import / export
+    </script>
+</body>
+</html>

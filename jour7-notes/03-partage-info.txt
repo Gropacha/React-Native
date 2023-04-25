@@ -1,0 +1,63 @@
+
+si vous avez deux composants qui ont une relation Parent-Enfant, il est possible de passer des informations du Parent => Enfant (props)
+
+Il est aussi possible de passer des informations de l'Enfant => Parent (props => fonction => exécutée dans l'enfant)
+
+function App(){ // Parent
+    function calcul(d){}
+    return <Text>
+    <Btn largeur={10} unite="cm" calcul={calcul}/>
+    </Text>
+}
+
+function Btn (props) { // Enfant
+    function info(){
+        console.log(props.largeur)
+        console.log(props.unite)
+        props.calcul("cm") // le fait d'exécuter la fonction calcul dans l'enfant, il est possible d'envoyer des infos vers le parent
+    }
+return <Button onPress={()=> console.log(props.unite)} title='mon bouton'/>
+}
+
+function Btn ({largeur, unite, calcul}) { // Enfant avec destructuration des props
+    function info(){
+        console.log(largeur)
+        console.log(unite)
+        calcul("cm") // le fait d'exécuter la fonction calcul dans l'enfant, il est possible d'envoyer des infos vers le parent
+    }
+return <Button onPress={()=> console.log(unite)} title='mon bouton'/>
+}
+
+// 2 composants frères : 
+
+export const Formulaire = () => {
+    const profil = {
+        nom:"Alain",
+        email:"toto@yahoo.fr",
+        password:"123456"
+    }
+    return <View>
+                <TextInput />
+                <TextInput />
+                <Button />
+            </View>
+}
+
+export const Profil = ({nom}) => {
+    useState( ) // localement
+    return  <Text>
+                {nom}
+            </Text> 
+}
+
+// il existe plusieurs manières de partager des informations entre des composants qui ne sont pas Parent/Enfant
+
+// Redux
+// Context => la nouvelle manière de procéder
+// Le principe de ces techniques => créer un state global qui peut être partager entre plusieurs composants quelque soit leurs positions les uns par rapport aux autres
+
+ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  
+    ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  
+ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION  
+
+on ne peut pas utliser directement useContext directement à l'intérieur du PROVIDER

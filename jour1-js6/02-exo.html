@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo sur les méthodes des array</title>
+</head>
+<body>
+    <script>
+        const exo=[1,2,3]; // initialisation du tableau pour exercice d'insertion et de suppression avec les méthodes des Array
+        console.log(exo);
+        exo.splice(1,0,"bonjour"); // rajoute "bonjour" à la deuxième position du tableau, donc après le chiffre 1
+        console.log(exo);
+        exo.splice(2,0,"comment allez vous"); // rajoute "comment allez vous" à la troisième position du tableau, donc entre "bonjour" et le chiffre 2
+        console.log(exo);
+        exo.splice(-2,1); // supprime l'avant dernier élément du tableau, donc le chiffre 2
+        console.log(exo);
+        exo.shift(); // supprime le premier élément du tableau, donc le chiffre 1
+        console.log(exo);
+    </script>
+</body>
+</html>

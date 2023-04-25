@@ -1,0 +1,6 @@
+fermer le lien avec l'émulateur
+cd ..
+npx create-expo-app --template
+jour5-ajax
+cd jour5-ajax
+npm run android

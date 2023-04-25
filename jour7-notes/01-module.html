@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module export / export default</title>
+</head>
+<body>
+    
+<!-- 
+à partir de 2015 => ES6 de javascript ajoute de nombreux mots clés au langage
+
+export
+import from
+
+=> système de module ECMA Script
+
+export default
+
+
+=> ce système de module permet de créer des scripts avec scope (portée)
+
+
+
+ -->
+
+ <script type="module">
+
+ </script>
+
+<script type="module">
+    import {getLogo, Etudiant, toto as renommage} from "./01-exemple.js"
+    // pour un import d'un export de base, besoin des accolades et possiblité de renommer avec 'as'
+    import renommageImportDefault from "./01-lib.js" // pour un import d'un export default, pas besoin d'accolades, et il est possible de le renommer
+    import * as lib from "./01-exemple.js"
+    // pour plusieurs import de plusieurs export de base d'un même fichier
+    console.log(lib.Etudiant)
+    console.log(getLogo());
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+</script>
+
+</body>
+</html>

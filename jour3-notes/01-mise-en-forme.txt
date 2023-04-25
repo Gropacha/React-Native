@@ -1,0 +1,11 @@
+mise en forme => comment disposer les éléments dans un écran
+
+Dans React Native => display:flex pour réaliser une mise en page
+
+<View> : les enfants directs sont disposé en display:flex et flexDirection:column par défaut (l'un en dessous de l'autre)
+
+à l'inverse du display:flex en html qui met les éléments l'un à côté de l'autre
+
+https://reactnative.dev/
+
+le site officiel de React Native

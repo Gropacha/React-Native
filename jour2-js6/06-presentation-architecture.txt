@@ -1,0 +1,66 @@
+3 dossiers :
+.expo 
+=> fichier de cache, si on utilise npm run web
+------------------------------------------------------------------------
+assets 
+=> images/fichier pdf/ data / son / video / logo
+------------------------------------------------------------------------
+node_modules 
+=> plein de code => toutes les librairies qui permettent à React Native de fonctionner / .expo de fonctionner : ON Y TOUCHE PAS (créer lors de la commande 'npx create-expo-app --template) / dossier technique (comme .git ou .db)
+pour modifier ce dossier on passsera par les commandes npm install... et npm uninstall...
+------------------------------------------------------------------------
+.gitignore 
+=> .git créé au début du projet // ce qui ne faut pas versionner
+------------------------------------------------------------------------
+Apps.js
+=> point d'accès de votre application = composant racine
+le fichier qui est appelé en premier et qui va appeler les autres composants
+------------------------------------------------------------------------
+app.json
+=> manifest : fichier de configuration : mode portrait... (version web => PWA)
+PWA => Progressive Web App
+------------------------------------------------------------------------
+babel.config.js
+=> librairie qui permet de transpiler = traduire d'une version de js à une autres
+=> JS ES6 en JSX (sur langage qui même du JS et du XML)
+------------------------------------------------------------------------
+package-lock.json
+=> packages créés lors de la création du projet
+=> adresse internet où on été téléchargé les différents modules
+package.json
+=> vrai point d'entrée du projet
+{
+  "name": "jour1-decouverte",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js", // vrai point d'entrée
+  "scripts": { // liste de commandes personnalisables
+    "start": "expo start", //
+    "android": "expo start --android", //
+    "ios": "expo start --ios", //
+    "web": "expo start --web" //
+  },
+  "dependencies": {
+    "expo": "~48.0.9",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.4"
+  },
+  "devDependencies": { // dépendance à la librairie Babel nécessaire à la transpilation
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
+------------------------------------------------------------------------
+
+
+lancer Android Studio
+lancer l'émulateur du smartphone
+retrécir Android Studio et le gestionnaire d'émulateur
+
+cd jour1-decouverte1
+npm run android
+parfois appuyer sur r dans le terminal pour rafraichir
+
+https://github.com/eramudeep/react-native-ecommerce.git
+
+exemple d'utilisation de React Native

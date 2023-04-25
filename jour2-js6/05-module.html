@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module import export</title>
+</head>
+<body>
+   <script>
+        // 05-module.html
+{
+const a = [];
+const b = [];
+a[0]=10;
+console.log(a);
+}
+
+
+
+   </script> 
+
+   <script>
+{
+    // IIFE : Immediately Invoqued Function Expression
+    (function(){
+        const a = ['hello'];
+    console.log(a);
+    })()
+    
+}
+   </script>
+
+    <script type="module">
+        const a = 0;
+        // scope 'a' est limité à la balise script
+    </script>
+
+    <script type="module">
+        const a = 0;
+    </script>
+    <script type="module">
+        // ./ => dans le même dossier que le fichier actuel
+        // { } => destructuration
+        import {calcul, a} from "./05-calcul.js";
+        calcul();
+        console.log (a);
+        // système de module ES => Ecma Script
+    </script>
+
+</body>
+</html>

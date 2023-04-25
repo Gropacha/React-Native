@@ -1,0 +1,206 @@
+le plus simple
+const unComposant = (props) => <View> pleins de JSX </View>; 
+
+un peu plus complet
+
+const unAutreComposant = (props) => {
+
+{/*
+
+gestion du state = variables qui interviennent dans le return
+grâce aux Hooks : useState, useEffect, useContext
+
+gestion de la logique, création de functions locales appelées au sein du render
+
+
+*/}
+
+
+    return (
+        <View>
+
+
+        </View>
+    )
+}
+
+NOTES de Malik :
+
+import { useState , useEffect } from "react"
+
+
+function A (){ => élément graphique que l'on va afficher à l'écran 
+
+    const [nb, setNb] = useState(0)
+    // nb => state 
+    // setNb => permet de modifier la valeur nb ET si elle est exécutée alors rééexécute le composant 
+
+    // logique => traitement 
+
+    function calcul(){
+        if(){
+            setNb(12)
+        }else {
+            setNb(20)
+        }
+        
+    } => impact sur le return (render) l'affichage du composant 
+    // pour que une fonction stockée dans un composant entraine une modification du render du composant 
+    // il faut utiliser des hooks (fonction de react => use...)
+
+
+    return <Text onPress={calcul}>{nb}</Text>
+    return <Text onPress={() => setNb(20)}>{nb}</Text>
+}
+
+<p>0</p>
+
+avec du js de base (web)
+
+function calcul(){
+    document.querySelector("p").innerHTML = 20
+}
+
+document.querySelector("p").addEventListener("click", calcul)
+
+useState() => utilisateur va faire une action (cliquer écrire) => modifier le visuel du composant
+
+=> exécuter un traitement suite à l'aparaition d'un evenement (déclenché par l'utilisateur ou cycle de vie du composant )
+
+// appeler une API (base de données) lorsque le composant est chargé 
+
+useEffect( function(){ // effectuer un traitement suite à une modification
+    fetch()
+        .then()
+        .then( data => setDonnee(data) ) ....
+} , []) 
+
+// appeler une API je clique sur le bouton ok d'un formulaire 
+
+useEffect( function(){ // effectuer un traitement suite à une modification
+    fetch()
+        .then()
+        .then( data => setDonnee(data) ) ....
+} , [compteur])
+
+
+
+// ----------------------
+function App(){
+    return <View>
+        <A />
+        <B /> {/* exécuter une fonction (composant) en jsx */}
+        <C />
+        <D />
+    </View>
+}
+
+
+function B(){
+
+    useEffect(function(){
+        fetch()
+            .then()
+            .then( setNb()) // <B /> 
+    } , [])
+
+    return <Text>b</Text>
+}
+
+// js de base 
+function b(){
+    // traitement
+    // traitement
+    // traitement
+    // traitement
+}
+
+b()
+
+// useState et useEffect => Locale au composant concerné 
+si je veux partager des données entre plusieurs composants 
+
+// utiliser useState et useEffect dans une Contexte => partager les données entre plusieurs composants 
+
+// page de connexion 
+// afficher le profil 
+
+// hello hello vous m'entendez ???? 
+// je redémarre @ toute suite !!! 
+
+fichier ...Context.js  => $_SESSION (en PHP)
+
+export const PanierContext = createContext() // etat globale
+
+export function PanierContextProvider(props){ // composant 
+
+    const [nb] = useState()
+
+    useEffect( , [])
+    useEffect( , [])
+
+    traitement1 setNb
+    traitement2 setListe
+    traitement3 setTraitement
+
+    return <PanierContext.Provider value={{ nb , traitement1, traitement2, traitement3 }}>
+        {props.children} // permet d'afficher les composants enfants dans App
+    </PanierContext.Provider>
+}
+
+function App(){ 
+    return <PanierContextProvider>
+        <View> // les composants enfants 
+            <A /> // les composants enfants 
+            <B /> // les composants enfants 
+            <C /> // les composants enfants 
+        </View>
+    </PanierContextProvider>
+}
+
+function C(){
+     const {nb}  = useContext(PanierContext) // modification de l'affichage dans une autre composant
+}
+
+function B(){
+     const {traitement1} = useContext(PanierContext) // exécuter une traitement globale
+}
+
+Attention vous ne pouvez pas utiliser <PanierContextProvider> et useContext dans le même composant 
+
+useContext est OBLIGATOIREMENT à utiliser dans les composants enfant de <PanierContextProvider>
+
+
+
+
+react native 
+
+barre de menu en bas de l'écran 
+
+const Bottom = createBottomTabNavigator() 
+
+<Bottom.Navigator>
+    <Bottom.Screen name="accueil" component={Accueil} />
+    <Bottom.Screen name="contact" component={Contact} />
+    <Bottom.Screen name="login" component={Login} />
+    <Bottom.Screen name="cgv-menu" component={CGVNav} />
+</Bottom>
+
+<ul>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+</ul>
+
+const Lien = createNativeStackNavigator() // navigation en pile (les résultats se pose sur la page existante)
+
+<Lien.Navigator>
+    <Lien.Screen name="cgv" component={CGV} />
+    <Lien.Screen name="cgv-details" component={CGVDetails} />
+</Lien.Navigator>
+
+<a href=""></a>
+<a href=""></a>
+
+// rdv 10h57 bon café @ toute suite 

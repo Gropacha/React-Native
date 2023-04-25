@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    
+    <script>
+        // 03-spread-operator.html
+
+        // opérateurs binaires + - * / %
+        // opérateur unaire ++ -- += -= *= /= %= !
+        // opérateurs ternaires
+
+        // ES6 => nouvel opérateur unaire ajouté => spread operator ...
+        // il s'utilise exclusivement sur les tableaux et les objets
+
+        const tableau = ["a", "b", "c", "d"];
+        const d = [...tableau];     // prend l'ensemble des valeurs stockées dans c
+                                    // copie par valeur
+
+        console.log(d);    
+
+        const prix = [10,20,30]; // adresse mémoire qui pointe vers le tableau de valeur
+        const reductions = prix; // copie de la référence
+        reductions[0] = 200;
+        console.log(prix);
+        console.log(reductions);
+
+        const prix2 = [10,20,30];
+        const reductions2 = [...prix2]; // copie par valeur
+        reductions2[0] = 200;
+        console.log(prix2);
+        console.log(reductions2);
+
+        // même chose sur les objets
+
+        const fleur = {
+            nom : "jasmin",
+            prix : 20
+        };
+        const autreFleur = fleur; // copie par référence
+
+        autreFleur.nom = "rose";
+        console.log(fleur);
+        console.log(autreFleur);
+
+        const fleur2 = {
+            nom : "jasmin",
+            prix : 20
+        };
+        const autreFleur2 = {...fleur2}; // clone objet (shalow copy)// useState
+
+        autreFleur2.nom = "rose";
+        console.log(fleur2);
+        console.log(autreFleur2);
+
+        const formation = {
+            nom:"CDA",
+            duree : 4,
+            unite : "mois"
+        }
+        const formation2 = {
+            unite : "annee",
+            sujet : "developper app mobile"
+        }
+
+        const formationComplete = {...formation, ...formation2}; // clone et fusion (merge)
+        /*
+        {
+            nom : "CDA",
+            duree : 4,
+            unite : "annee",
+            sujet : "developper app mobile"
+
+        }
+        */
+       console.log(formationComplete);
+
+       const toto = {prix:10, isAdmin:false};
+
+       const titi = {...toto, prix:30, duree:20};
+       console.log(titi);
+
+       // ... => changement de type de tableau
+       // ... => shallow copy (copie en surface), puis le Deep Copy
+    </script>
+</body>
+</html>

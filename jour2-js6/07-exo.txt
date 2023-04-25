@@ -1,0 +1,9 @@
+dans le projet react native
+
+créer un nouveau composant Exo1
+
+ce composant retourne le texte "je suis Exo1"
+
+mettre le texte en rose et taille de police en 30
+
+et l'exécuter dans l'APP

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rappel ajax fetch</title>
+</head>
+<body>
+    
+    <script>
+        const url = `https://restcountries.com/v3.1/name/france`;
+        fetch(url)
+            .then(reponse => reponse.json())
+            .then( data => console.log(data))
+        // fetch() retourne une Promise contenant un objet Reponse {} ayant une méthode .json() qui retourne elle même une Promise avec les données vues à l'écran
+    
+        // quand TOUT va bien
+
+        const url2 = `https://restcountries.com/v3.1/name/blabla`;
+        fetch(url2)
+            .then(reponse => 
+            {
+                console.log(reponse);
+                if (reponse.status === 200) return reponse.json();
+                throw new Error("Une erreur s'est produite");
+
+            })
+            .then( data => console.log(data))
+            .catch(ex => console.log(ex))
+            // status : 404, message :'Not Found'
+
+            const url3 = `https://restcountries.com/v666/name/blabla`;
+            fetch(url3)
+            .then(reponse => 
+            {
+                console.log(reponse);
+                if (reponse.status === 200) return reponse.json();
+                throw new Error("Une erreur s'est produite");
+
+            })
+            .then( data => console.log(data))
+            .catch(ex => console.log(ex))
+
+
+            // pour essayer des requetes appelées en boucle jusqu'à avoir une réponse positive :
+            // rxjs.dev => librairie Reactive Extensions Library for JavaScript
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traitement des jsons renvoyés par une api</title>
+</head>
+<body>
+    <script>
+        // tout dépend de l'API
+
+        const urlPays=`https://restcountries.com/v3.1/name/france`
+        fetch(urlPays)
+            .then(reponse => reponse.json())
+            .then( data => console.log(data)) //[{....}] // {erreur:404, message:Not Found}
+
+        const urlPays2=`https://restcountries.com/v3.1/name/france`
+        fetch(urlPays2)
+            .then(reponse => reponse.json())
+            .then( ([france]) => console.log(france)) //[{....}] // {erreur:404, message:Not Found}
+
+        const urlCocktail = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+        fetch(urlCocktail)
+            .then(reponse => reponse.json())
+            .then( data => console.log(data)) // {drinks:[{},{},{}]}
+
+        const urlCocktail2 = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+        fetch(urlCocktail2)
+            .then(reponse => reponse.json())
+            //utilisation de la destructuration
+            .then( ({drinks}) => console.log(drinks)) // {drinks:[{},{},{}]}
+
+        const urlPlaceHolder = `https://jsonplaceholder.typicode.com/posts`
+        fetch(urlPlaceHolder)
+            .then(reponse => reponse.json())
+            .then( data => console.log(data)) //[{},{},{}] => si c'est faux {}
+
+        // en fonction de l'API appelée => les formes des réponses correctes et les formes des réponses incorrectes sont variables
+    </script>
+</body>
+</html>

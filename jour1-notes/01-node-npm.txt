@@ -1,0 +1,80 @@
+nodeJS =>
+
+jusqu'en dans les années 2010, si vous aviez un code en Javascript, le seul et unique moyen d'exécuter c'était de passer par une page html et un navigateur
+
+const a = {nom : "Alain"};
+console.log(a);
+
+=> le mettre dans un fichier html => le fichier le faire exécuter dans un navigateur
+=> dans tous les navigateurs => moteur Javascript (partie du navigateur web) comprend le langage Javascript et sait l'exécuter
+
+----------------------------------------------------------------------------------
+
+à partir de 2010 => un développeur a décidé d'extraire le moteur Javascript (V8) du navigateur Chrome et va l'entourer de C++ => NodeJS
+
+V8 + C++ => NodeJS => outil qui permet d'exécuter du code Javascript hors des navigateurs
+
+etape 1 => vérifier que tout le monde à nodeJS installé sur sa machine ET exécuter un script js avec nodeJS
+
+etape 2 => npm outil qui est installé en même temps que NodeJS
+
+terminal : npm --version
+
+NodeJS => outil qui permet d'exécuter du JS hors du navigateur
+
+NPM => Node Package Manager => outil qui permet de télécharger des librairies en Javascript depuis le site internet nmpjs.com
+
+Gestionnaire de Paquet => outil qui permet de télécharger des librairies sur votre disque développeur
+npmjs.com => répository dans lequel on va pouvoir télécharger des librairies (jquery)
+
+terminal : npm init --yes
+#fichier package.json qui s'est créé dans le dossier jour1
+terminal : npm install jquery
+#dossier node_modules qui s'est créé dans le dossier jour1
+
+package.json => fichier mis à la racine de notre projet, il a pour rôle de décrire notre projet sous format json
+
+décrire le projet dont 2 propriétés intéressantes :
+    - script =>
+    - dependancies => les lib que l'on a téléchargé pour faire fonctionner notre projet
+
+node_module : le dossier qui contient nos librairies que l'on a téléchargée
+dossier jquery > dist > plusieurs versions de jquery
+
+Avant (et ça marche encore maintenant) pour installer react native
+npm install --global expo-cli
+
+Maintenant (la mode actuelle) (npx = npm --exec)
+terminal au niveau du dossier react-native :    npx create-expo-app --template
+ou alors :                                      npm --exec create-expo-app --template
+y, 4 choix (blank), nom de l'application,
+
+// ETAPE 1 : installation de React Native dans notre ordinateur
+
+// ETAPE 2 : intallation d'émulateur de smartphone
+// => android studio
+// editeur de texte qui permet de créer des applications mobiles
+// DANS l'éditeur, il y a une partie
+AVD => Android Virtual Device
+
+=> https://developer.android.com/studio/ (!!! presque 1 Go)
+
+=> gros logiciel
+=> Editeur de texte pour créer des applications mobiles xxxxx
+=> installer .........
+=> AVD => Android Virtual Device xxxxxx
+
+=> créer une simulation de smartphone
+
+
+=> cd jour1-decouverte 
+terminal dans le dossier du projet : npm run android
+créé une liaison entre le projet et l'émulation du smartphone (un genre de Live Server amélioré)
+
+
+----------------------------------------------
+
+=> Avant d'aller écrire dans le dossier jour1-decouverte
+=> rappel / présentation de js => besoin au quotidien quand on utilise (React et React Native)
+
+js = page web mais aussi dans react native

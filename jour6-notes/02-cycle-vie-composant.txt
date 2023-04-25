@@ -1,0 +1,26 @@
+function Composant (){
+
+    const [nb, setNb] = useState(0);
+    const [drinks, setDrinks] = useState([]);
+
+    useEffect(function(){
+        fetch()
+            .then()
+            .then(cocktails => setDrinks(cocktails))
+    })
+
+    =>ces deux fonctions (Hook) permettent de réexécuter le rendu du composant
+
+    return <View>
+                <Text>Bonjour</Text>
+                <Button onPress={()=>setNb(10)} title="test" />
+            </View>
+}
+
+=> exécuté dans le composant App
+
+function App (){
+    return <View>
+                <Composant/>
+            </View>
+}

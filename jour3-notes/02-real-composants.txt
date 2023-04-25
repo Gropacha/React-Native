@@ -1,0 +1,33 @@
+créer un nouveau projet
+cd..
+npx create-expo-app --template
+Blank
+'nom du projet'
+javascript
+cd 'nom du projet'
+npm run android
+r : pour rafraichir
+
+extension => créer rapidement des composants
+=> extension Visual Studio Code
+
+https://github.com/ults-io/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md
+rnfe : raccourci pour créer la structure d'un composant sans style
+rnfes : raccourci pour créer la structure d'un composant avec style
+
+https://reactnative.directory/?search=checkbox
+
+npm i react-native-bouncy-checkbox
+
+<Image/>
+ <Image source={require("../assets/favicon.png")}/>
+<Image source={{uri : "https://source.unsplash.com/random/400x200", width:400, height:200}}/>
+
+soit en local, soit à distance (dans ce cas, il faut spécifier un width et un height)
+
+pour jeudi 6 avril 2023
+//composant de base
+//evenement => onPress
+//hook => fonction de React qui permet de gérer des données en local
+//useState
+//useEffect

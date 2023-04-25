@@ -1,0 +1,7 @@
+ajouter un nouveau lien dans la barre de menu en bas de l'écran
+
+connexion => logo en forme de cadenas
+
+lorsque l'on clique sur ce lien, on arrive sur un formulaire ou on demande un login et un password
+
+et si vous n'avez pas de compte pour l'instant un bouton est posé pour créer un compte en dessous du formulaire

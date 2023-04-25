@@ -1,0 +1,7 @@
+stopper le projet actuel
+
+=> cd ..
+npx create-expo-app jour4-communication
+
+https://expo.dev/@malik_h/jour4-communication?serviceType=classic&diistribution=expo-go
+

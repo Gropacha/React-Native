@@ -1,0 +1,50 @@
+par défaut dans React Native, il n'y a pas de composant Menu
+
+en html, il existe la balise <a href=''></a> qui permet de créer une barre de menu en la combinant avec des balises liste
+
+il faut ajouter un composant extérieur pour créer des menus en RN
+
+sur internet :  https://reactnavigation.org/
+                https://reactnative.dev/docs/navigation
+
+    il existe plusieurs manières de naviguer
+
+    => STACK navigation => un composant qui se pose l'un sur l'autre
+
+    => bottom-tabs => onglets en bas d'écran => une barre de menu en bas de l'écran, passer d'un composant à l'autre en cliquant ou en swappant
+
+    => drawer barre latérale que l'on va pouvoir faire apparaître soit via un bouton ou doigt qui fait glisser la nouvelle page
+
+    ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+    => stopper le projet en cours
+    => cd..
+    => npx create-expo-app --template
+    blank, jour6-menu
+    => cd jour6-menu
+    => npm install @react-navigation/native @react-navigation/native-stack @react-navigation/bottom-tabs react-native-vector-icons react-native-pager-view @react-navigation/material-top-tabs react-native-tab-view react-native-screens react-native-safe-area-context
+    
+    npx expo install react-native-pager-view@6.1.2 react-native-safe-area-context@4.5.0
+
+=> npm run android
+
+avant de se lancer dans la barre de menu en bas de l'écran :
+création de 2 composants: 
+Accueil
+Profil
+
+=> je souhaite avoir la navigation Accueil/profil avec un menu en bas (dans App.js)
+
+et aussi sur la page Profil => un menu stack (dans Profil.jsx)
+
+<Menu.Navigator>
+    <Menu.Screen component={Accueil}/>
+    <Menu.Screen component={ProfilNavigation}/>
+</Menu.Navigator>
+
+=> je dois créer un composant intermédiaire : ProfilNavigation
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+component={NomDuComposant}
+name="chaine de caractère" qui permet de nommer une "route" (genre d'url interne)

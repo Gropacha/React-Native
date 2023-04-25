@@ -1,0 +1,13 @@
+lundi 3 avril 2023
+
+// react native
+
+=> pour pouvoir travailler en local sur React Native, il faut obligatoirement installer NodeJS
+
+terminal : node --version
+
+=> en même temps de l'installation de nodeJS, un autre outil a été installé : npm
+
+=> dans le terminal vous devez avoir un retour visuel : npm --version
+
+=> si vous avez la version au dessus de >12 de NodeJS ça doit fonctionner

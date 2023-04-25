@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rappel sur les Array</title>
+</head>
+<body>
+    
+
+    <script>
+        const a = [1,2,3];
+        // a est un tableau ET automatiquement js le transform aussi en objet
+        // ancien support de cours : https://formation.webdevpro.net/js-initiation
+        // login : js
+        // password : initiation
+        // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+        // rappels sur les différents méthodes sur les Array
+
+        // ajouter
+        // push(4,5,6) => ajoute à droite
+        // unshift("é","ds") => ajoute à gauche
+        // splice (index, 0, "bonjour", [], {}, true) => ajoute à partir de l'emplacement 'index'
+
+        // supprimer
+        // pop() => supprime le premier élément, pas de paramètre
+        // shift() => supprime le dernier élément, pas de paramètre
+        // splice (index, 1) => supprime l'élément à l'index
+
+        // modification
+        a[2]='autre valeur';
+        a.splice(2,1,'autre valeur dfd');
+
+        // .map() => boucle dans React => tableau => copie et il est modifié => concaténation
+
+        const r = a.map(item => `<p>${item}</p>`);
+
+        const b = a.reduce(function(total, item){
+            return total + item
+        }, 0);
+
+        const c = a.filter(function(item){
+            return item > 2
+        });
+
+        const d = a.find(function(item){ // [1,2,30]
+            return item > 2
+        })
+        // d ===30 // si condition no vérifiée, return 'undefined'
+
+        const tab = [1,2,3,1,1,3]; // quelle est la position de tous les 1 dans le tableau
+
+        // [0,3,4]
+
+        // solution 1, for classique
+        const position1 = [];
+        for (let i = 0; i < tab.length; i++){
+            if (tab[i]===1){
+                position1.push(i);
+            }
+        }
+        console.log(position1);
+
+        // solution 2, forEach
+        const position1bis = [];
+        tab.forEach(function(item,index){
+            if (item ===1){
+                position1bis.push(index);
+            }
+        })
+        console.log(position1bis)
+
+        // solution 3, indexOf(), FindlastIndex()
+
+        // chainage
+
+        const etudiants = [
+            {nom : "Alain", notes : [1, 12, 20, 15]},
+            {nom : "Béatrice", notes : [6,9,14,8]}
+            ];
+
+        // me donner la liste des étudiants qui ont une moyenne > 10
+
+        const etudiantsAdmis = etudiants.filter(etudiant  => etudiant.notes.reduce( ((total, current) => total + current),0) / etudiant.notes.length  >= 10);
+        console.log(etudiantsAdmis);
+        // uglygy : minify et minimise l'intitulé des noms de variable et de function
+        // les fonctions sur les tableaux peuvent s'enchaîner et avec les fonctions fléchées en plus, One Liner
+        
+    </script>
+</body>
+</html>

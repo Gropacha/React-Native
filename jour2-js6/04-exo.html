@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo spread operator</title>
+</head>
+<body>
+    <script>
+
+
+        const exo = ["texte", "lorem", "ipsum"]; // tableau initial sans le mot "test"
+
+        const copie = [...exo]; // shallow copy = copie en surface du tableau initial
+
+        exo[1] = "test"; // modification du tableau initial
+        // exo.splice(exo.indexOf("lorem", 1, "test"));
+
+        const test = copie.filter(item => item ==="test");  // recherche du mot "test" dans la copie du tableau
+        console.log(test.length===0? "Le mot 'test' n'a pas été trouvé" : "Utilisation du spread operator incorrecte");
+
+    </script>
+</body>
+</html>

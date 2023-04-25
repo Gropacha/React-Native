@@ -1,0 +1,56 @@
+cas pratique :
+
+barre de menu en bas de l'écran
+
+Accueil
+    => Hello
+    + si on est connecté, on affiche le profil
+    + sinon, on affiche un bouton de connexion
+
+
+///////////////////////////////////
+///////////////////////////////////
+
+à la racine du projet
+App.js => seul et ne pas mettre d'autres composants à la racine
+
+contexts/ => dossier qui contient les différents contextes globaux de l'application
+
+composants/ => dossier composants qui contient des sous-dossiers
+    - front/
+    - back/
+    - communs/
+
+services
+    authentification/
+    articles/
+    base de données appel/
+
+hook/
+
+requete Ajax :
+useEffect( function(){
+    fetch().then()...
+})
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+cas pratique
+
+remplir la page d'accueil avec une liste de cocktails
+www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+réaliser un affichage
+
+image du cocktail
+titre
+bouton seulement si l'utilisateur est connecté
+et l'utilisateur va pouvoir sélectionner un ou plusieurs cocktails
+en cliquant sur les boutons (changer l'apparence des boutons déjà cliqué)
+
+un fois que l'utilisateur a cliquer, s'il va dans la page profil, 
+on va lui afficher, l'ensemble des cocktails qu'il a sélectionné sous son nom
+
+dans le composant Accueil
+utiliser useEffect
+

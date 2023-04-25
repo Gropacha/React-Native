@@ -1,0 +1,24 @@
+support : 
+https://formation.webdevpro.net/react-native 
+login : react-native 
+password : facebook 
+
+-----------------
+
+notes de cours sur github :
+https://github.com/webdevproformation/react-native-d-avril-2023
+
+
+1 mise en page => Flexbox (version React Native) par défaut flexDirection : "column"
+
+2 on a vu plusieurs composants
+=> <View> => <div>
+par défaut <View> n'a pas de hauteur fixée via du 'css react native', sa hauteur dépend de la hauteur de ses composants enfants
+Si on fixe une hauteur explicite au composant <View> => si la somme des hauteurs des composants enfants > hauteur de View container => les éléments en dehors sont cachés
+<ScrollView> => s'adapte en hauteur et s'étend vers le bas avec un scroll
+=> <Text> => <p> <h1> <h2> <li> ....
+=> <TextInput>> => <input type='texte'> <textarea>
+=> on a téléchargé un composant pour les cases à cocher <BusyCheckBox> => <input type='radio'>
+=> <button/>
+=> <Image/> => <img src='' alt=''>
+

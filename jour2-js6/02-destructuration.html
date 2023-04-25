@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuration</title>
+</head>
+<body>
+    
+
+    <script>
+        // 02-destructuration.html
+        const etudiant = {
+            nom : "Alain",
+            age : 20,
+            adresse : {
+                rue : "75 rue de Paris",
+                ville : "Lille",
+                cp : 59000
+            }
+        }
+
+        console.log(etudiant.adresse.cp);
+
+        // ES6, depuis 2015 => nouvelle manière d'accéder aux propriétés d'un objet
+        const {cp, ville, rue} = etudiant.adresse; // extrait les propriétés d'un objet (même contenues dans un autre objet)
+        console.log(cp, ville, rue);
+
+        const etudiant2 = {
+            nom : "Céline",
+            adresse : {
+                rue : "35 rue de Lille",
+                ville : "Paris"
+            }
+        }
+
+        const {ville : villeCeline} = etudiant2.adresse; // desctructuration d'un objet et renommage
+        console.log(villeCeline);
+
+        function description (objet){
+            return `${objet.titre} ${objet.auteur}`
+        }
+
+        // destructuration de l'objet en paramètre d'une fonction
+        function description ({titre, auteur}) {
+            return `${titre} ${auteur}`
+        }
+
+        const destruction = ({titre, auteur}) => `${titre} ${auteur}`;
+
+        
+
+    </script>
+</body>
+</html>

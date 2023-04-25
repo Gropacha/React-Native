@@ -1,0 +1,16 @@
+créer un nouveau composant Pays
+
+TextInput et Button
+
+Liste
+
+par défaut, afficher la liste de tous les pays
+https://restcountries.com/v3.1/all
+
+nom pays
+drapeau
+population
+devise avec le symbole
+
+si vous modifier le champ d'input :
+afficher https://restcountries.com/v3.1/name/{text input}

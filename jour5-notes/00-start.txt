@@ -1,0 +1,83 @@
+support : 
+https://formation.webdevpro.net/react-native 
+login : react-native 
+password : facebook 
+
+---------------------
+---------------------
+https://react-native-sensors.github.io/
+---------------------
+---------------------
+
+notes de cours sur github :
+https://github.com/webdevproformation/react-native-d-avril-2023
+
+rappel hier 
+
+=> quel composant en + =>
+Touchable => effet et sur certain composant qui n'ont la props onPress={}
+emballer votre composant dans Touchable => 
+<TouchableWithoutFeedback onPress={}>
+    <Image source={} /> cliquable
+</TouchableWithoutFeedback> 
+
+Attention les images svg ne sont comprises par défaut => ajouter module à notre projet 
+pour que ça soit utilisable 
+=> Attention les manipulations sont à effectuer sur chaque nouveau projet 
+=> attention npm i => affectent uniquement le projet concerné 
+
+--------------------
+
+localState + action 
+
+actions : 
+import { View , Button} from "react-native"
+import { useState } from "react"
+
+function Composant(){
+    const total = 0 ; // variable de base 
+    const [total1, setTotal1] = useState(0) // localState 
+    //  total1  variable (state)
+    //  setTotal1 fonction qui permet de modifier total1 
+    // si je veux modifier total1 0 => 1 => 
+    // je peux pas écrire total1 = 1 => ça marche pas 
+    // setTotal1(1) => ça fonctionne 
+    const traitement = () => {
+        // modification 
+        // logique et aussi 
+        // modifier le localState 
+        // données qui sont internes / locale au composant 
+        setTotal1(1); 
+        // relancer l'exécution de la Composant() en intégralite 
+    }
+    return <View>
+        <Text>{total}</Text>
+        <Button onPress={function(){}} title="btn1" />
+        <Button onPress={() => {}} title="btn2"/>
+        <Button onPress={traitement} title="btn3"/>
+    </View>
+}
+
+export default Composant ;
+
+-------------------------------
+
+function Componsant2(){
+    const [liste, setListe] = useState([]) // attention [] array ou un objet 
+
+    function ajouter (){
+        // attention 
+        liste.push({etudiant : "Alain"})
+        setListe(liste); // vous n'allez pas avoir de mise à jour 
+                         // ça ne va pas marcher 
+                         // il faut que la variable mise dans SetListe est une réf différente de l'état 
+    }
+
+    function ajouter(){
+        const cloneListe = [...liste] ;
+        cloneListe.push({etudiant : "Alain"})
+        setListe(cloneListe) ; // là ça marche => cloneListe et liste ref mémoire différente
+    }
+
+    return <Button onPress={ajouter} title="btn1"/>
+}

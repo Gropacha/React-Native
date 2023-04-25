@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+    // dans un fichier html de base (tous les concepts sur navigateur et app mobile avec React Native)
+
+    const a = [1,2,3];
+
+    // traitement que l'on peut faire avec un tableau => le parcourir
+    // for / for of / for in
+    for (let item of a){ // très utilisé dans le monde web
+        console.log(item);
+    }    
+
+    // boucle dans React / React Native
+    // utilisation les méthodes du tableau a
+    // a étant un tableau, non seulement, js va stocker dans la variable a, les valeur [1,2,3]
+    // Mais en + (automatique), javascript va transformer la valeur a en un object qui possède de nombreuses méthodes
+    // a.map()
+    // a.filter()
+    // a.indexOf()
+    // a.reduce()
+    // a.pop()
+    // a.push()
+    // a.slice()
+    // a.splice()
+    // a.forEach()
+    // a.join()
+    
+    // bien comprend et maîtriser ces méthodes, vont nous permettre de bien utiliser React
+    // jschallenger.com
+    // https://www.freecodecamp.org/learn/javascript-algorihtms-and-data-structures/#basic-javascript
+    // codeingame cours/exo et des clashofcode
+
+    const b = [1,2,3];
+    console.log(b);
+    // ajouter une valeur à la fin du tableau .push()
+    b.push (4);
+    console.log(b);
+    b.unshift("bonjour"); // ajouter au début du tableau
+    console.log(b);
+    b.splice (2,0,"coucou");
+    console.log(b);
+    // 2 position (index) où je veux insérer la valeur
+    // 0 le nombre d'élément que je veux supprimer 0 => aucun
+    // "coucou" le mot à ajouter
+    b.splice(2,0, []);
+    console.log(b);
+    // splice(position, nb à supprimer, élemt à ajouter, élemt à ajouter) peut prendre plusieurs paramètres pour ajouter plusieurs éléments à la suite
+
+    // [].push("");
+    // [].unshift("");
+    // [].splice(position,0, "")
+    // les différentes méthodes pour ajouter un élément dans un tableau existant
+
+    // comment supprimer
+    const c =["bonjour", "comment", "allez", "vous", "?"];
+    console.log(c);
+    c.pop(); // supprime le dernier élément
+    console.log(c);
+    c.shift(); // supprime le premier élément
+    console.log(c);
+    c.splice(1,1); // position et nombre d'élément à supprimer
+    console.log(c);
+    c.splice(0,1, "how");
+    console.log(c);
+
+
+    const etudiant = "Alain"; // stockage d'une valeur primitive
+    const age = 20;
+    const etat = false;
+
+    //   pour les types primitives, avec const on ne peut plus les modifier
+
+    const formation = ["js", "react"]; // stockage d'une référence mémoire
+    const promotion = { produit:"PS4", prix:20};
+    formation.push("Angular");
+    promotion.produit = "PS5";
+
+    // par contre pour les array et les objects, c'est possible
+
+    const formes = ["triangle", "carre"];
+    Object.freeze(formes);
+    // formes.push("cercle");
+    // console.log(formes);
+
+    </script>
+</body>
+</html>
