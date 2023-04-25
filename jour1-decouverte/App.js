@@ -11,7 +11,7 @@ import { Bonjour } from './composants/Bonjour';
 import { Exo1 } from './composants/Exo1';
 import { deuxieme as Deuxieme } from './composants/Deuxieme';
 import { Boucle } from './composants/Boucle';
- 
+  
 // le composant => fonction javascript App()
 // qui doit s'appeler OBLIGATOIREMENT App
 // elle return du JSX (mix entre JS, HTML, XML)
